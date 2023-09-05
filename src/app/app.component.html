@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <!-- routerLinkActive ใส่ลงใน tag li หรือ a ก็ได้ แต่พอใช้ CSS bootstrap การทำงานมันอยู่ที่ li ก็เลยต้องใส่ที่ li -->
+        <li
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a routerLink="/servers">Servers</a>
+        </li>
+        <li role="presentation" routerLinkActive="active">
+          <a [routerLink]="'/users'">Users</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <!-- <a [routerLink]="['/servers', 'edit']">Reload Page</a> http://localhost:4200/servers/edit-->
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Outlet สำหรับ Path หลัก เช่น /, /servers เป็นต้น เพราะอยู่ใน App -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
